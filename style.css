@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Suwannaphum', sans-serif;
+}
+
+.custom-cursor {
+    cursor: url('small logo.png'), auto;
+}
+
+.navbar {
+    background-color: #101010;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Added relative positioning */
+    z-index: 100; /* Ensure navbar stays on top */
+}
+body {
+    background-color: rgb(250, 250, 250);
+}
+.navbar ul {
+    list-style: none;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.black-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; /* Adjusted left position */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjusted opacity */
+    z-index: -1;
+}
+
+p {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    color: rgb(15, 15, 15);
+    z-index: 1; /* Ensure text stays on top of black-bar */
+    padding: 20px; /* Added padding to the paragraph */
+}
+
+.instagram-link {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 999;
+}
+
+.instagram-link img {
+    width: 40px;
+    height: auto;
+}
+
+#content {
+    padding: 30px;
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr); /* Adjust grid to one column for smaller screens */
+    }
+}

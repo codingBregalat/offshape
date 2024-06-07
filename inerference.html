@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
+    <style>
+  
+        .headline {
+            text-align: center;
+            margin-top: 50px; /* Adjusted for fixed navbar */
+            margin-bottom: 30px;
+            font-size: 14px;
+            font-weight: 300; /* Changed to light font weight */
+            z-index: 1; /* Ensure headline is above full-screen video */
+            position: relative;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            z-index: 1; /* Ensure grid is above full-screen video */
+            position: relative;
+        }
+
+        .grid-item {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .large-image {
+            grid-column: span 2; /* Make it span across two columns */
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html#featured-section">featured</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="archive.html">archive</a></li>
+        </ul>
+        <div class="logo-container">
+            <a href="index.html" class="logo"><img src="small logo white.png" alt="Logo"></a>
+        </div>
+    </div>
+
+    <div class="headline">interference</div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="mariaImage1.png" alt="Image 1">
+        </div>
+        <div class="grid-item">
+            <img src="mariaImage2.png" alt="Image 2">
+        </div>
+        <div class="grid-item">
+            <img src="mariaImage3.png" alt="Image 3">
+        </div>
+        <div class="grid-item">
+            <img src="freisteller inverted.png" alt="Image 4">
+        </div>
+        <div class="grid-item large-image">
+            <img src="YNG_Sophir_05-HighRes.jpg" alt="Large Image">
+        </div>
+    </div>
+</body>
+</html>

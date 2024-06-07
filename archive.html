@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Suwannaphum', sans-serif;
+        }
+
+        .navbar {
+            background-color: #101010;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style: none;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .black-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 150px;
+            padding: 0 20px;
+        }
+
+        .image-grid .image-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .image-grid img:hover {
+            filter: grayscale(0%);
+        }
+
+        .image-grid .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            background-color: transparent;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: light;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            font-family: 'Suwannaphum', sans-serif;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-grid .image-container:hover .image-text {
+            opacity: 1;
+        }
+
+        .typewriter {
+            font-family: 'Suwannaphum', sans-serif;
+            display: none;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            width: 0;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background-color: transparent;
+            padding: 10px;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html#featured-section">featured</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="archive.html">archive</a></li>
+        </ul>
+        <div class="logo-container">
+            <a href="index.html" class="logo"><img src="small logo white.png" alt="Logo"></a>
+        </div>
+        <div class="black-bar"></div>
+    </div>
+
+    <!-- Typewriter text container -->
+    <div id="typewriter-text" class="typewriter">You have found the archive</div>
+
+    <div class="image-grid">
+        <div class="image-container">
+            <a href="generatedfashion.html">
+                <img src="img1.png" alt="Image 1">
+                <div class="image-text">generated fashion</div>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="ladyofthelake.html">
+                <img src="img2.png" alt="Image 2">
+                <div class="image-text">lady of the lake</div>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="inerference.html">
+                <img src="img3.png" alt="Image 3">
+                <div class="image-text">interference</div>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="ProjectAgnes.html">
+                <img src="img4.png" alt="Image 4">
+                <div class="image-text">Project:Agnes</div>
+            </a>
+        </div>
+    </div>
+

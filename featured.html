@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add the link tag to import the Suwannaphum font -->
+    <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Suwannaphum', sans-serif; /* Use Suwannaphum font for all text */
+        }
+
+        body {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background-color: transparent; /* Set background color to transparent */
+            position: fixed; /* Make the menu fixed */
+            top: 0; /* Position it at the top */
+            width: 100%;
+            z-index: 999; /* Ensure it appears above other content */
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul li {
+            margin: 0 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: dimgray;
+        }
+
+        ul li a:hover {
+            color: rgb(157, 157, 157);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 10px; /* Adjust the margin as needed */
+        }
+
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 100px; /* Adjust top margin to make space for the menu */
+        }
+
+        @media screen and (max-width: 600px) {
+            /* Adjust video size for smaller screens */
+            .responsive-video {
+                width: 120%; /* Adjust the width as needed */
+                margin-left: -10%; /* Center the video horizontally */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="featured.html">featured</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="archive.html">archive</a></li>
+        </ul>
+        <div class="logo-container">
+            <a href="index.html" class="logo"><img src="small logo.png" alt="Logo"></a>
+        </div>
+    </div>
+
+  
+</body>
+</html>
