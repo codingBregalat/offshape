@@ -18,8 +18,8 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0px;
             z-index: 1; /* Ensure grid is above full-screen video */
             position: relative;
         }
@@ -52,24 +52,29 @@
 </head>
 <body>
     <div class="navbar">
-        <ul>
-            <li><a href="index.html#featured-section">featured</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="archive.html">archive</a></li>
-        </ul>
-        <div class="logo-container">
-            <a href="index.html" class="logo"><img src="small logo white.png" alt="Logo"></a>
+        <div class="navbar-wrapper">
+            <ul>
+                <li><a href="STORE.html"><img src="SHOP.png" alt="featured"></a></li>
+                <li><a href="about.html"><img src="ABOUT.png" alt="about"></a></li>
+                <li><a href="archive2.html"><img src="Archive.png" alt="archive"></a></li>
+            </ul>
         </div>
     </div>
 
-    <div class="headline">project:agnes</div>
-
     <div class="grid-item large-video">
         <video autoplay loop muted>
-            <source src="OliverSchraft_PersonalProject.mp4" type="video/mp4">
+            <source src="OliverSchraft_PersonalProjectcompressed.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
+
+    <div class="grid-item large-video">
+        <video autoplay loop muted>
+            <source src="heroshot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
 
 </body>
 </html>

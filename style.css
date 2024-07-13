@@ -1,3 +1,4 @@
+/* General CSS reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,72 +9,199 @@
     cursor: url('small logo.png'), auto;
 }
 
-.navbar {
-    background-color: #101010;
-    padding: 20px 0;
-    text-align: center;
-    position: relative; /* Added relative positioning */
-    z-index: 100; /* Ensure navbar stays on top */
-}
 body {
-    background-color: rgb(250, 250, 250);
+    line-height: 1.6;
+    background-image: url('seemless background.jpg'); /* Replace 'your-image.jpg' with the path to your image */
+    background-size: cover; /* This ensures the image covers the entire background */
+    background-position: center; /* This centers the image */
+    background-repeat: repeat; /* This prevents the image from repeating */
+    color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed from center to flex-start */
+    align-items: center;
+    background-color: rgb(57, 57, 57); /* This will be a fallback color if the image doesn't load */
 }
+
+.navbar {
+    position: fixed;
+    right: 3%;
+    top: 45%;
+    transform: translateY(-50%);
+    padding: 10px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navbar ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 20px 0;
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: #fff;
+.navbar ul li a img {
+    width: 25px; /* Set a consistent size for navbar images */
+    height: auto;
+    transition: width 0.3s, height 0.3s;
 }
 
-.black-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0; /* Adjusted left position */
+.bottom-right-logo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(30, end);
+    color: whitesmoke;
+    background-color: black;
+    margin-left: 10px;
+    text-align: right;
+    position: relative;
+    max-width: 90vw; /* Use viewport width for smaller screens */
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Adjusted opacity */
-    z-index: -1;
+    box-sizing: border-box;
+}
+
+.typewriter::after {
+    content: '';
+    border-right: 3px solid whitesmoke;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: whitesmoke; }
+}
+
+.typewriter-text {
+    font-size: 20px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: right;
+    max-width: 90vw; /* Use viewport width for smaller screens */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 p {
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    text-align: center;
-    position: relative;
-    color: rgb(15, 15, 15);
-    z-index: 1; /* Ensure text stays on top of black-bar */
-    padding: 20px; /* Added padding to the paragraph */
-}
-
-.instagram-link {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    z-index: 999;
-}
-
-.instagram-link img {
-    width: 40px;
-    height: auto;
+    text-align: right;
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    color:black;
+    padding-top: 20px;
 }
 
 #content {
     padding: 30px;
 }
 
-/* Media queries for smaller screens */
-@media screen and (max-width: 768px) {
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 0px;
+    margin-top: 40px; /* Offset the image grid from the top */
+    padding: 0 20px;
+}
+
+.image-grid .image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.image-grid img:hover {
+    filter: grayscale(0%);
+}
+
+.image-grid .image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: light;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: 'Suwannaphum', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-grid .image-container:hover .image-text {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar ul li a img {
+        width: 20px; /* Reduce the size of navbar images for mobile */
+    }
+    .bottom-right-logo img {
+        width: 60px;
+    }
+    .typewriter-text {
+        font-size: 16px; /* Adjust font size for mobile */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .typewriter {
+        font-size: 14px; /* Adjust font size for mobile */
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 90%; /* Ensure it doesn't go outside the screen */
+    }
     .image-grid {
-        grid-template-columns: repeat(1, 1fr); /* Adjust grid to one column for smaller screens */
+        grid-template-columns: 1fr; /* Single column on mobile */
+        margin-top: 40px; /* Offset the image grid from the top */
+        padding-right: 20px; /* Adjust padding for mobile */
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar ul li a img {
+        width: 25px;
+    }
+    .bottom-right-logo img {
+        width: 100px;
+    }
+    .typewriter-text {
+        font-size: 15px;
+    }
+    .image-grid {
+        padding-right: 10px; /* Increase right padding for larger screens */
     }
 }

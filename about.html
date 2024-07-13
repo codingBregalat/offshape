@@ -6,9 +6,59 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
     <style>
-        /* Your existing CSS styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Suwannaphum', sans-serif;
+        }
 
-        /* New styles for the impressum link */
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content img {
+            max-width: 100%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .content .img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px; /* Reduced margin here */
+        margin-right: 20px;
+    }
+
+    .content .img-container img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .content .img-container img:first-child {
+        max-width: 20%;
+    }
+
+    .content .img-container img:last-child {
+        max-width: 60%;
+        margin-top: 10px;
+    }
+    }
+
         .impressum-link {
             text-align: center;
             margin-top: 20px;
@@ -18,33 +68,48 @@
             color: #333;
             text-decoration: none;
         }
+
+        .impressum-fixed {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 0;
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <ul>
-            <li><a href="index.html#featured-section">featured</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="archive.html">archive</a></li>
-        </ul>
-        <div class="logo-container">
-            <a href="index.html" class="logo"><img src="small logo white.png" alt="Logo"></a>
+        <div class="navbar-wrapper">
+            <ul>
+                <li><a href="STORE.html"><img src="SHOP.png" alt="featured"></a></li>
+                <li><a href="about.html"><img src="ABOUT.png" alt="about"></a></li>
+                <li><a href="archive2.html"><img src="Archive.png" alt="archive"></a></li>
+            </ul>
         </div>
-        <div class="black-bar"></div> <!-- Added the black-bar div -->
     </div>
 
-    <p>
-       Offshape is a creative studio founded by German fashion designer Oliver Schraft. Our ambition is to weave narratives that transcend conventional fashion collections. Inspired by the immersive worlds of digital media, we go on a quest to find silhouettes that playfully shape and abstract the human form, and develop garments that bridge the gap between avant-garde and prêt-à-porter. Each collection tells a unique story, inviting you to step into a realm where fashion and fantasy are seamlessly intertwined.
+    <div class="content">
+        <p>
+            Offshape is a creative studio founded by German fashion designer Oliver Schraft. 
+            Our ambition is to weave narratives that transcend conventional fashion collections, 
+            crafting a modern folklore where myths are spread through ethernet cables. 
+            Inspired by the immersive worlds of video games, we merge garments and avatars, 
+            creating looks where the lines blur between outfit and identity. 
+            Each collection tells a unique story, inviting you to step into a realm where fashion
+            and fantasy are seamlessly intertwined.
+        </p>
+        <div class="img-container">
+            
+            <img src="headshot.jpg" alt="Descriptive Image">
+        </div>
+    </div>
 
-
-    </p>
-
-    <a href="https://www.instagram.com/osa_studios/?hl=de" class="instagram-link" target="_blank">
-        <img src="instaIcon.png" alt="Instagram Icon">
-    </a>
+    <div class="bottom-right-logo">
+        <a href="index.html"><img src="small logo white.png" alt="Small Logo"></a>
+    </div>
 
     <!-- Impressum link -->
-    <div class="impressum-link">
+    <div class="impressum-link impressum-fixed">
         <a href="impressum.html">Impressum</a>
     </div>
 

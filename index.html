@@ -2,17 +2,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8"> <!-- Added missing closing angle bracket -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: 'Suwannaphum', sans-serif;
-        }
-      
+    
         .video-container {
             position: relative;
             width: 100%;
@@ -25,71 +19,39 @@
             display: block;
             margin-top: 0px;
         }
-
-        .centered-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 100%;
-            height: auto;
-        }
-
-        .instagram-link {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            z-index: 999;
-        }
-
-        .instagram-link img {
-            width: 40px;
-            height: auto;
-        }
-
-        /* Add some content below the video for demonstration */
-        #content {
-            padding: 20px;
-        }
+        
     </style>
 </head>
 <body>
+    
     <div class="navbar">
-        <ul>
-            <li><a href="index.html#featured-section">featured</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="archive.html">archive</a></li>
-        </ul>
-        <div class="logo-container">
-            <a href="index.html" class="logo"><img src="small logo white.png" alt="Logo"></a>
+        <div class="navbar-wrapper">
+            <ul>
+                <li><a href="STORE.html"><img src="SHOP.png" alt="featured"></a></li>
+                <li><a href="about.html"><img src="ABOUT.png" alt="about"></a></li>
+                <li><a href="archive2.html"><img src="Archive.png" alt="archive"></a></li>
+            </ul>
         </div>
     </div>
 
     <div class="video-container">
-        <video class="responsive-video" id="index-video" src="landingPageVideo.mp4" autoplay loop muted></video>
-        <img src="logotextWhite.png" alt="Centered Logo" class="centered-image" style="width: 200px;">
+        <video class="responsive-video" id="index-video" autoplay loop muted>
+            <source id="video-source" src="landing page videocompressed.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <div id="featured-section"></div>
-
-    <div id="content" style="text-align: center;">
+    <div id="content">
         <p>coming soon</p>
-    </div>    
+    </div>
 
-    <a href="https://www.instagram.com/osa_studios/?hl=de" class="instagram-link" target="_blank">
-        <img src="instaIcon.png" alt="Instagram Icon">
-    </a>
+    <div class="bottom-right-logo">
+        <div class="typewriter-text">
+            <div class="typewriter">WELCOME TO OFFSHAPE.</div>
+        </div>
+        <a href="index.html"><img src="small logo white.png" alt="Small Logo"></a>
+    </div>
 
-    <script>
-        // Add smooth scroll behavior to all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
+
 </body>
 </html>
