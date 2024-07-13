@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
     <style>
-        /* Add any additional styles if needed */
+        .headline {
+            text-align: center;
+            margin-top: 50px; /* Adjusted for fixed navbar */
+            margin-bottom: 10px; /* Decreased margin bottom */
+            font-size: 14px;
+            font-weight: 300; /* Changed to light font weight */
+            z-index: 1; /* Ensure headline is above full-screen video */
+            position: relative;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0px;
+            z-index: 1; /* Ensure grid is above full-screen video */
+            position: relative;
+        }
+
+        .grid-item {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .grid-item video {
+            width: 100%;
+            height: auto;
+        }
+
+        .large-video {
+            grid-column: span 2; /* Make it span across two columns */
+            grid-row: span 2; /* Make it span across two rows */
+            width: 100%;
+            height: auto;
+            overflow: hidden; /* Hide any overflowing content */
+        }
+
+        .large-video video {
+            width: 100%; /* Set the width to 100% */
+            height: 100%; /* Set the height to 100% */
+            object-fit: cover; /* Maintain aspect ratio and cover container */
+        }
     </style>
 </head>
 <body>
-    
     <div class="navbar">
         <div class="navbar-wrapper">
             <ul>
@@ -21,65 +61,20 @@
         </div>
     </div>
 
-    <div class="grid-container">
-        <!-- First video -->
-        <div class="grid-item large-video">
-            <video autoplay loop muted>
-                <source src="LadyPortfoliocutMusic.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        
-        <!-- Four additional videos -->
-        <div class="grid-item">
-            <video autoplay loop muted>
-                <source src="turntable1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="grid-item">
-            <video autoplay loop muted>
-                <source src="turntable2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="grid-item">
-            <video autoplay loop muted>
-                <source src="turntable3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="grid-item">
-            <video autoplay loop muted>
-                <source src="turntable4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <div class="image-grid">
-        <div class="image-container">
-            <a href="ladyofthelake.html">
-                <img src="img2.png" alt="Image 2">
-                <div class="image-text">lady of the lake</div>
-            </a>
-        </div>
-        <div class="image-container">
-            <a href="ProjectAgnes.html">
-                <img src="img4.png" alt="Image 4">
-                <div class="image-text">Project:Agnes</div>
-            </a>
-        </div>
+    <div class="grid-item large-video">
+        <video autoplay loop muted>
+            <source src="LadyPortfoliocutMusic.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <div class="bottom-right-logo">
-        <div class="typewriter-text">
-            <div class="typewriter">YOU HAVE FOUND THE ARCHIVE</div>
-        </div>
+
         <a href="index.html"><img src="small logo white.png" alt="Small Logo"></a>
     </div>
 
     <script src="script.js"></script>
+
 
 </body>
 </html>
