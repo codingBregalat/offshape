@@ -11,6 +11,7 @@ window.onload = function() {
     var source = document.getElementById('video-source');
     if (isMobileDevice()) {
         source.src = 'landingpageVideoMobilecompressed.mp4';
+        video.setAttribute('playsinline', ''); // Add playsinline attribute
         video.load();
     }
 };
