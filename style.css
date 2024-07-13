@@ -189,6 +189,25 @@ p {
         margin-top: 40px; /* Offset the image grid from the top */
         padding-right: 20px; /* Adjust padding for mobile */
     }
+
+    /* Video grid items */
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 10px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .grid-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .grid-item video {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -203,5 +222,25 @@ p {
     }
     .image-grid {
         padding-right: 10px; /* Increase right padding for larger screens */
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+        gap: 10px;
+    }
+
+    .grid-item.large-video {
+        grid-column: span 2;
+    }
+
+    .grid-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .grid-item video {
+        width: 100%;
+        height: auto;
     }
 }
