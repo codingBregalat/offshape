@@ -48,6 +48,17 @@
             height: 100%; /* Set the height to 100% */
             object-fit: cover; /* Maintain aspect ratio and cover container */
         }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Single column on mobile */
+            }
+
+            .large-video {
+                grid-column: 1; /* Single column */
+                grid-row: 1; /* Single row */
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,19 +73,16 @@
     </div>
 
     <div class="grid-item large-video">
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline>
             <source src="LadyPortfoliocutMusic.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
     <div class="bottom-right-logo">
-
         <a href="index.html"><img src="small logo white.png" alt="Small Logo"></a>
     </div>
 
     <script src="script.js"></script>
-
-
 </body>
 </html>
