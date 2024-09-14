@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
-
     <link rel="icon" href="favicon.png" type="image/png">
 
     <style>
@@ -59,17 +58,19 @@
             </ul>
         </div>
     </div>
-    
 
     <div class="video-container">
-        <video class="responsive-video" id="index-video" autoplay muted playsinline loop>
-            <source id="video-source" src="website versioncompressed.mp4" type="video/mp4">
-            <!-- Optional: Add other video formats like WebM for broader browser support -->
+        <video class="responsive-video" id="index-video" muted playsinline loop>
+            <!-- Desktop Video -->
+            <source id="desktop-video" src="website version.mp4" type="video/mp4">
             <source src="website version.webm" type="video/webm">
+            <!-- Mobile Video -->
+            <source id="mobile-video" src="Logo revealmobile.mp4" type="video/mp4">
+            <source src="Logo revealmobile.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
     </div>
-    
+
     <div class="bottom-right-logo">
         <div class="typewriter-text">
             <div class="typewriter">WELCOME TO OFFSHAPE.</div>
@@ -77,7 +78,50 @@
         <a href="index.html"><img src="small logo white.png" alt="Small Logo"></a>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Function to detect if the user is on a mobile device
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Function to attempt autoplay
+        function attemptAutoplay(video) {
+            video.play().catch(error => {
+                console.error('Autoplay was prevented:', error);
+            });
+        }
+
+        window.onload = function() {
+            var video = document.getElementById('index-video');
+
+            // Check if it's a mobile device and adjust the video source
+            if (isMobileDevice()) {
+                document.getElementById('mobile-video').src = 'Logo revealmobile.mp4'; // Mobile video source
+                document.querySelector('source[type="video/webm"]').src = 'Logo revealmobile.webm'; // Mobile webm video source
+            } else {
+                document.getElementById('desktop-video').src = 'website version.mp4'; // Desktop video source
+                document.querySelector('source[type="video/webm"]').src = 'website version.webm'; // Desktop webm video source
+            }
+
+            video.setAttribute('muted', ''); // Ensure video is muted for autoplay to work on mobile
+            video.setAttribute('playsinline', ''); // Mobile video to play inline
+            video.setAttribute('autoplay', ''); // Ensure autoplay works
+            video.setAttribute('loop', ''); // Ensure video loops
+
+            video.load(); // Reload the video with the updated source
+            attemptAutoplay(video); // Try to autoplay the video
+        };
+
+        // Add smooth scroll behavior to all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
