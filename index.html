@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Suwannaphum&display=swap" rel="stylesheet">
 
     <link rel="icon" href="favicon.png" type="image/png">
-    
+
     <style>
         .video-container {
             position: relative;
@@ -21,28 +21,50 @@
             display: block;
             margin-top: 0px;
         }
+
+        .index-image-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .index-image-grid .text {
+            flex: 1;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .index-image-grid .image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .index-image-grid img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
-    
+
     <div class="navbar">
         <div class="navbar-wrapper">
             <ul>
-                <li><a href="STORE.html"><img src="SHOP.png" alt="featured"></a></li>
-                <li><a href="about.html"><img src="ABOUT.png" alt="about"></a></li>
-                <li><a href="archive2.html"><img src="Archive.png" alt="archive"></a></li>
+                <li><a href="STORE.html">STORE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="archive2.html">ARCHIVE</a></li>
             </ul>
         </div>
     </div>
+    
 
     <div class="video-container">
         <video class="responsive-video" id="index-video" autoplay loop muted playsinline>
-            <source id="video-source" src="landing page videocompressed.mp4" type="video/mp4">
+            <source id="video-source" src="website version.mp4" type="video/mp4">
         </video>
-    </div>
-
-    <div id="content">
-        <p>coming soon</p>
     </div>
 
     <div class="bottom-right-logo">

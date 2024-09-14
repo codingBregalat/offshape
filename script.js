@@ -10,7 +10,7 @@ window.onload = function() {
     var video = document.getElementById('index-video');
     var source = document.getElementById('video-source');
     if (isMobileDevice()) {
-        source.src = 'landingpageVideoMobilecompressed.mp4';
+        source.src = 'Logo revealmobile.mp4';
         video.setAttribute('playsinline', ''); // Add playsinline attribute
         video.load();
     }
