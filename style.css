@@ -11,27 +11,27 @@
 
 body {
     line-height: 1.6;
-    background-image: url('seemless background.jpg'); /* Replace 'your-image.jpg' with the path to your image */
-    background-size: cover; /* This ensures the image covers the entire background */
-    background-position: center; /* This centers the image */
-    background-repeat: repeat; /* This prevents the image from repeating */
+    background-color: rgb(192, 192, 192);
+    background-size: cover; /* Ensures the image covers the viewport */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
     color: #121212;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Changed from center to flex-start */
-    align-items: center;
-    background-color: rgb(57, 57, 57); /* This will be a fallback color if the image doesn't load */
+    margin: 0; /* Ensures no margin affects layout */
+    padding: 0; /* Ensures no padding affects layout */
+    min-height: 100vh; /* Ensures the body covers the viewport height */
 }
+
+/* Other styles remain the same */
 
 .navbar {
     position: fixed;
-    right: 3%;
-    top: 45%;
-    transform: translateY(-50%);
+    right: 20px; /* Aligns it to the right, close to the bottom-right logo */
+    top: 50%; /* Centers it vertically */
+    transform: translateY(-50%); /* Vertically centers the navbar */
     padding: 10px;
-    z-index: 100;
+    z-index: 100; /* Ensures it stays above other elements */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks the items vertically */
     align-items: center;
     justify-content: center;
 }
@@ -47,10 +47,20 @@ body {
     margin: 20px 0;
 }
 
-.navbar ul li a img {
-    width: 25px; /* Set a consistent size for navbar images */
-    height: auto;
-    transition: width 0.3s, height 0.3s;
+.navbar ul li a {
+    text-decoration: none;
+    font-size: 20px; /* Adjust size as needed */
+    color: whitesmoke; /* Default color for the text */
+    font-weight: 300; /* Thinner font weight */
+    transition: color 0.3s ease;
+    writing-mode: vertical-rl; /* Makes the text vertical */
+    transform: rotate(180deg); /* Adjusts the reading direction */
+    vertical-align: 60%;
+}
+
+
+.navbar ul li a:hover {
+    color: #555; /* Hover effect for text */
 }
 
 .bottom-right-logo {
@@ -113,7 +123,7 @@ p {
     max-width: 800px;
     margin: 20px;
     padding: 20px;
-    color:black;
+    color: black;
     padding-top: 20px;
 }
 
@@ -121,6 +131,15 @@ p {
     padding: 30px;
 }
 
+/* Mobile responsiveness for index page */
+@media (max-width: 768px) {
+    .index-image-grid {
+        grid-template-columns: 1fr; /* Stack images on mobile */
+        gap: 20px;
+    }
+}
+
+/* Image grid styles specific to the archive page */
 .image-grid {
     display: grid;
     grid-template-columns: 1fr; /* Single column layout */
@@ -166,6 +185,7 @@ p {
     opacity: 1;
 }
 
+/* Responsive adjustments for the navbar, logos, and typewriter text */
 @media (max-width: 768px) {
     .navbar ul li a img {
         width: 20px; /* Reduce the size of navbar images for mobile */
@@ -210,6 +230,7 @@ p {
     }
 }
 
+/* Larger screen adjustments */
 @media (min-width: 1024px) {
     .navbar ul li a img {
         width: 25px;
