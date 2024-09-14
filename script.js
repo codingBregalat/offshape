@@ -8,11 +8,15 @@ window.onload = function() {
     var video = document.getElementById('index-video');
     var sources = video.getElementsByTagName('source');
     
-    // Check if it's a mobile device and adjust the video source
+    // Check if it's a mobile device
     if (isMobileDevice()) {
-        sources[0].src = 'Logo revealmobilecompressed.webm'; // Mobile video
+        // Mobile video
+        sources[0].src = 'Logo revealmobilecompressed.mp4'; // Mobile video in MP4 format
+        sources[1].src = 'Logo revealmobilecompressed.webm'; // Mobile video in WebM format
     } else {
-        sources[0].src = 'website versioncompressed.webm'; // Desktop video
+        // Desktop video
+        sources[0].src = 'website versioncompressed.mp4'; // Desktop video in MP4 format
+        sources[1].src = 'website versioncompressed.webm'; // Desktop video in WebM format
     }
 
     video.setAttribute('muted', ''); // Ensure video is muted for autoplay to work on mobile
